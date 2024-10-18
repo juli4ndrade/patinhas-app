@@ -1,12 +1,14 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { useForm, Controller} from 'react-hook-form'
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'expo-router'
 import Input from '@/src/components/input/input'
 import SubmitButton from '@/src/components/submitButton/submitButton';
 
-
 export default function Login() {
+  const [email, setEmail] = useState('');
+  const
+
   return (
     <View className='bg-[#01377D] flex-1'>
       <View className='w-full h-[150px] flex justify-center items-center  '>
