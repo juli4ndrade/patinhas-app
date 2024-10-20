@@ -2,7 +2,7 @@ import { Text, TouchableOpacity, View } from 'react-native'
 import React, { Component } from 'react'
 
 interface CustomButtomProps {
-    onPress: () => void;
+    onPress: (onPress: any) => void;
     title: string;
     textStyles?: string;
     containerStyles?: string;

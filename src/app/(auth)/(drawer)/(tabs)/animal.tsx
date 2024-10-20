@@ -7,13 +7,19 @@ import {
   FlatList,
   SafeAreaView,
   ImageBackground,
+  Modal,
+  TouchableOpacity,
 } from "react-native";
 import { FontAwesome6 } from "@expo/vector-icons";
 import InfoAnimal from "@/src/components/infoAnimal/infoAnimal";
 import CustomButton from "@/src/components/customButton/customButton";
 import MenuButton from "@/src/components/menuButton/menuButton";
+import { useState } from "react";
 
-export default function Home() {
+export default function Animal() {
+
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
   return (
     <ScrollView className="bg-white">
       <View >
@@ -65,11 +71,45 @@ export default function Home() {
             <InfoAnimal title="Vacinado" />
             <InfoAnimal title="Sociável" />
           </View>
-          <View className="">
+          <View>
             <CustomButton
-              onPress={() => console.log("tap")}
+              onPress={() => setIsModalVisible(true)}
               title="Quero Adotar"
             />
+            <Modal 
+            visible={isModalVisible}
+            animationType="fade"
+            transparent={true}
+            onRequestClose={() => setIsModalVisible(false)}
+            >
+              <View style={style.outerView}>
+                <View style={style.modalView}>
+                <View className="flex flex-row items-center gap-2 pt-3 pb-5">
+                <FontAwesome6 name="message" size={20} color="#7FD349"/>
+                  <Text className="font-semibold">
+                    Quer Adotar?
+                  </Text>
+                </View>
+                <Text>
+                Para adotar esse pet ou saber mais sobre ele, entre em contato com o protetor:
+                </Text>
+               <View className="flex flex-row items-center gap-2 pt-5 mb-2">
+               <FontAwesome6 name="envelope" size={20} color="#7FD349"/>
+               <Text>fulano@gmail.com</Text>
+               </View>
+                <View className="flex flex-row items-center gap-2 pb-7">
+                  <FontAwesome6 name="whatsapp" size={20} color="#7FD349"/>
+                <Text>(11) 99999-9999</Text>
+                </View>
+                <View className="flex justify-center items-center mt-5">
+                <TouchableOpacity className=" bg-white border-[#7FD349] border-2 rounded-xl w-[80px] h-[30px] flex justify-center items-center"
+                onPress={() => setIsModalVisible(false)} >
+                  <Text className="text-[#7FD349] text-center"> Sair</Text>
+                </TouchableOpacity>
+                </View>
+                </View>
+              </View>
+            </Modal>
           </View>
         </View>
       </View>
@@ -78,5 +118,23 @@ export default function Home() {
 }
 
 const style = StyleSheet.create({
-  formContainer: {},
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  outerView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+  },
+  modalView: {
+    backgroundColor: "white",
+    borderRadius: 30,
+    padding: 20,
+    width: 300,
+    alignContent: "center",
+  } 
 });
