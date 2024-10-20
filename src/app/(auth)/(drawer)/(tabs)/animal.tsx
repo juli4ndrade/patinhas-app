@@ -98,7 +98,7 @@ export default function Animal() {
                <Text>fulano@gmail.com</Text>
                </View>
                 <View className="flex flex-row items-center gap-2 pb-7">
-                  <FontAwesome6 name="whatsapp" size={20} color="#7FD349"/>
+                  <FontAwesome6 name="whatsapp" size={22} color="#7FD349"/>
                 <Text>(11) 99999-9999</Text>
                 </View>
                 <View className="flex justify-center items-center mt-5">
