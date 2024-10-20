@@ -104,7 +104,7 @@ export default function Animal() {
                 <View className="flex justify-center items-center mt-5">
                 <TouchableOpacity className=" bg-white border-[#7FD349] border-2 rounded-xl w-[80px] h-[30px] flex justify-center items-center"
                 onPress={() => setIsModalVisible(false)} >
-                  <Text className="text-[#7FD349] text-center"> Sair</Text>
+                  <Text className="text-[#7FD349] text-center font-semibold"> Sair</Text>
                 </TouchableOpacity>
                 </View>
                 </View>
