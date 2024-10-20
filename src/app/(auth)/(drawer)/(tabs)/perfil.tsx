@@ -4,11 +4,11 @@ import React, { useEffect, useState } from "react"
 import { FlatList, Text, View } from "react-native";
 
 export default function Perfil(){
-    const [users,setUsers] = useState([]);
+    const [user,setUser] = useState([]);
 
         useEffect(() =>{
-         axios.get('https://jsonplaceholder.typicode.com/users')
-         .then((response) => setUsers(response.data)).catch((err) => console.log(err))
+         axios.get()
+         .then((response) => setUser(response.data)).catch((err) => console.log(err))
      }, []);
      
      const renderUserCard = ({item}) =>{
@@ -16,19 +16,16 @@ export default function Perfil(){
              <View>
                  <Text> {item.name} </Text>
                  <Text> {item.email} </Text>
-                 <Text> {item.username} </Text>
-                 <Text> {item.website} </Text>
+                 <Text> {item.city} </Text>
+                 <Text> {item.state} </Text>
+                 <Text> {item.telephone} </Text>
              </View>
          )
      }
      return(
         <View>
             <Header title="Perfil"/>
-            <FlatList
-            data={users}
-            keyExtractor={(item) => item.id.toString()}
-            renderItem={renderUserCard}
-            />
+            
         </View>
      )
    

@@ -8,7 +8,6 @@ import { useEffect } from "react";
 
 const CustomDrawerContent = (props: any) => {
   const pathname = usePathname();
-
   useEffect(() => {}, [pathname]);
   return (
     <DrawerContentScrollView {...props}>
@@ -24,10 +23,10 @@ const CustomDrawerContent = (props: any) => {
       <DrawerItem 
         label={'Home'}
         labelStyle={[styles.navItemLabel,
-          { color: pathname == '/home' ? '#01377D' : '#fff'}]}
-          style={{backgroundColor: pathname == '/home' ? '#fff' : '#01377D'}}
+          { color: pathname == '/' ? '#01377D' : '#fff'}]}
+          style={{backgroundColor: pathname == '/' ? '#fff' : '#01377D'}}
         onPress={() => {
-          router.push('/(drawer)/(tabs)/home');
+          router.push('/');
         }}
       />
       <DrawerItem 

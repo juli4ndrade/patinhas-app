@@ -8,7 +8,6 @@ import {
   SafeAreaView,
   ImageBackground,
 } from "react-native";
-import { Entypo } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
 import InfoAnimal from "@/src/components/infoAnimal/infoAnimal";
 import CustomButton from "@/src/components/customButton/customButton";
