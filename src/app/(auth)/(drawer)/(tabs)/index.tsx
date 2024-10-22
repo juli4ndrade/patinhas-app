@@ -3,6 +3,7 @@ import CustomButton from "@/src/components/customButton/customButton";
 import { ScrollView } from "react-native-gesture-handler";
 import { FontAwesome6 } from "@expo/vector-icons";
 import MenuButton from "@/src/components/menuButton/menuButton";
+import { router } from "expo-router";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ export default function Home() {
         </ImageBackground>
         <View className="mt-10 px-10 flex gap-3">
           <CustomButton
-            onPress={() => console.log("tap")}
+            onPress={() => {router.push('/adocao')}}
             title="Quero Adotar"
           />
         </View>
@@ -34,7 +35,6 @@ export default function Home() {
           horizontal={true}
           className="mt-14 px-4 flex w-full h-[230px]"
         >
-          <View className="flex mr-4 "></View>
           <View className="flex mr-4 ">
             <ImageBackground
               source={require("@/src/assets/dog2.png")}
